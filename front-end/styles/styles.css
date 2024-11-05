@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main_text{
+    margin: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+body{
+    margin: 100px;
+}
+
+a{
+    font-size: 20px;
+}
+
+
+.UI{
+    display: flex;
+    justify-content: space-between;
+}
+
+.user_UI{
+
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    margin-left: 20px;
+    width: 25%;
+    border: 1px solid;
+}
+
+.diagrams_UI{
+
+    margin-right: 20px;
+    width: 70%;
+    text-align: center;
+    padding-top: 20px;
+    border: 1px solid;
+}
+
+.input_for_user{
+    margin-top: 10px;
+    height: 40px; /* Висота поля вводу */
+    width: 100%; /* Ширина поля вводу */
+    padding: 10px; /* Внутрішні відступи */
+    border: 1px solid #000000; /* Колір і товщина рамки */
+    border-radius: 5px; /* Закруглення кутів */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тінь для об'єму */
+    font-size: 16px; /* Розмір шрифту */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Анімація при фокусі */
+}
+
+.input_for_user:focus {
+    border-color: #0056b3; /* Зміна кольору рамки при фокусі */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Тінь при фокусі */
+    outline: none; /* Прибираємо стандартний контур */
+}
+
+.Input_for_years{
+    text-align: center;
+    width: 100%;
+}
+
+.slider {
+    width: 80%; 
+    margin: 20px 0; 
+}
+
+.text_in_UI{
+    font-size: 18px;
+}
