@@ -1,0 +1,27 @@
+.idea
+.venv
+
+# Django
+*.log
+*.pot
+*.pyc
+*.swp
+*.swo
+media
+staticfiles
+
+# Ignore environment file
+.env
+
+
+# Ignore IDE specific files
+.idea/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
