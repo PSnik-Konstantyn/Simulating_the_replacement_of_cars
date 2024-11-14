@@ -39,4 +39,5 @@ def simulate_changing(initial_dvz_share, initial_ev_share, years, transition_mat
     plt.legend()
     plt.grid()
     plt.show()
+    return dvz_share, ev_share
 
