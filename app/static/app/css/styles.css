@@ -44,7 +44,6 @@ a{
 }
 
 .input_for_user{
-    margin-top: 10px;
     height: 40px; /* Висота поля вводу */
     width: 100%; /* Ширина поля вводу */
     padding: 10px; /* Внутрішні відступи */
@@ -61,6 +60,10 @@ a{
     outline: none; /* Прибираємо стандартний контур */
 }
 
+.user_button{
+    margin-top: 20px;
+}
+
 .Input_for_years{
     text-align: center;
     width: 100%;
@@ -73,4 +76,10 @@ a{
 
 .text_in_UI{
     font-size: 18px;
+}
+
+.label_for_input_field{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
 }
