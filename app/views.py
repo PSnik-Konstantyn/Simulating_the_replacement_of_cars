@@ -33,3 +33,4 @@ def calc(request):
         form = Form()
 
     return render(request, "app/index.html", {'form': form})
+  

@@ -24,10 +24,10 @@ a{
     font-size: 20px;
 }
 
-
 .UI{
     display: flex;
     justify-content: space-between;
+
     width: 90%;
 }
 
@@ -45,7 +45,6 @@ a{
 }
 
 .diagrams_UI{
-
     margin-right: 20px;
     width: 70%;
     text-align: center;
@@ -86,6 +85,7 @@ a{
     margin-top: 10px;
     height: 40px; /* Висота поля вводу */
     width: 80%; /* Ширина поля вводу */
+
     padding: 10px; /* Внутрішні відступи */
     border: 1px solid #000000; /* Колір і товщина рамки */
     border-radius: 5px; /* Закруглення кутів */
@@ -116,6 +116,7 @@ a{
 
 .text_in_UI{
     font-size: 18px;
+
 }
 
 .label_for_input_field{
