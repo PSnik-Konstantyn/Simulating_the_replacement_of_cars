@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .main_text{
     margin: 20px;
     font-size: 20px;
@@ -18,24 +24,27 @@ a{
     font-size: 20px;
 }
 
-
 .UI{
     display: flex;
     justify-content: space-between;
+
+    width: 90%;
 }
 
 .user_UI{
-
     display: flex;
     flex-direction: column;
-    padding: 50px;
     margin-left: 20px;
     width: 25%;
+    height: 100%;
     border: 1px solid;
 }
 
-.diagrams_UI{
+.myForm {
+    width: 100%;
+}
 
+.diagrams_UI{
     margin-right: 20px;
     width: 70%;
     text-align: center;
@@ -43,10 +52,40 @@ a{
     border: 1px solid;
 }
 
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
 .input_for_user{
-    margin-top: 10px;
     height: 40px; /* Висота поля вводу */
     width: 100%; /* Ширина поля вводу */
+    padding: 10px; /* Внутрішні відступи */
+    border: 1px solid #000000; /* Колір і товщина рамки */
+    border-radius: 5px; /* Закруглення кутів */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тінь для об'єму */
+    font-size: 16px; /* Розмір шрифту */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Анімація при фокусі */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+.form-button {
+    margin-top: 10px;
+    height: 40px; /* Висота поля вводу */
+    width: 80%; /* Ширина поля вводу */
+
     padding: 10px; /* Внутрішні відступи */
     border: 1px solid #000000; /* Колір і товщина рамки */
     border-radius: 5px; /* Закруглення кутів */
@@ -61,6 +100,10 @@ a{
     outline: none; /* Прибираємо стандартний контур */
 }
 
+.user_button{
+    margin-top: 20px;
+}
+
 .Input_for_years{
     text-align: center;
     width: 100%;
@@ -73,4 +116,11 @@ a{
 
 .text_in_UI{
     font-size: 18px;
+
+}
+
+.label_for_input_field{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
 }
