@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from Simulating_the_replacement_of_cars.model.Calculations import calculate_transition_matrix, simulate_changing
+from app.model.Calculations import calculate_transition_matrix, simulate_changing
 
 
 class TestCalculations(unittest.TestCase):
