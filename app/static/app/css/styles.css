@@ -45,6 +45,9 @@ a{
 }
 
 .diagrams_UI{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-right: 20px;
     width: 70%;
     text-align: center;
@@ -110,8 +113,8 @@ a{
 }
 
 .slider {
-    width: 80%; 
-    margin: 20px 0; 
+    width: 80%;
+    margin: 20px 0;
 }
 
 .text_in_UI{

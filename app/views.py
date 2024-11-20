@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from .forms import Form
 from .model.Calculations import calculate_transition_matrix
+from .model.ModelMain import initial_ev_share, initial_dvz_share, simulate_changing
 
 
 def calc(request):
@@ -22,10 +23,11 @@ def calc(request):
             dvz_subsidy = form.cleaned_data['dvz_subsidy']
             years = form.cleaned_data['years']
 
-            result = json.dumps(calculate_transition_matrix(fuel_price, electricity_price, dvz_maintenance_factor, ev_maintenance_factor,
-                                dvz_range, ev_range, charging_speed, refueling_speed, ev_subsidy, dvz_subsidy).tolist())
+            transition_matrix = calculate_transition_matrix(fuel_price, electricity_price, dvz_maintenance_factor, ev_maintenance_factor,
+                                dvz_range, ev_range, charging_speed, refueling_speed, ev_subsidy, dvz_subsidy)
+            result = simulate_changing(initial_dvz_share, initial_ev_share, years, transition_matrix)
 
-            return JsonResponse({"result": result, "years": years})
+            return JsonResponse({"result": result})
         else:
             # В разі недійсної форми також потрібно повернути відповідь у форматі JSON
             return JsonResponse({"errors": form.errors}, status=400)

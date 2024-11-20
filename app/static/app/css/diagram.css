@@ -1,0 +1,74 @@
+.diagram-container {
+    width: 90%;
+    height: 900px;
+    overflow: scroll;
+}
+
+.year {
+    margin: 0 0;
+}
+
+.cars {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.car {
+    width: 50px;
+    height: 30px;
+    background-color: rgba(255, 0, 0, 0.64);
+    clip-path: polygon(0% 100%, 10% 65%, 35% 65%, 45% 35%, 70% 35%, 85% 65%, 100% 65%, 100% 100%, 0% 100%);
+    position: relative;
+}
+
+.car.electric {
+    background-color: rgba(0, 0, 255, 0.64);
+}
+
+.car::before,
+.car::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -5px;
+}
+
+.car::before {
+    left: 10px;
+}
+
+.car::after {
+    right: 10px;
+}
+
+.legend {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.legend-box {
+    width: 20px;
+    height: 20px;
+}
+
+.legend-red {
+    background-color: rgba(255, 0, 0, 0.64);
+}
+
+.legend-blue {
+    background-color: rgba(0, 0, 255, 0.64);
+}
