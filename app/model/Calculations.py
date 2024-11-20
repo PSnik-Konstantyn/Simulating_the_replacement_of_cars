@@ -66,14 +66,14 @@ def simulate_changing(initial_dvz_share, initial_ev_share, years, transition_mat
 
     # Побудова графіків для часток автомобілів з ДВЗ та електромобілів
     years_range = np.arange(0, years + 1)
-    plt.plot(years_range, dvz_share_percent, label="Частка ДВЗ (%)", color='r')
-    plt.plot(years_range, ev_share_percent, label="Частка електромобілів (%)", color='g')
-    plt.xlabel("Роки")
-    plt.ylabel("Частка (%)")
-    plt.title("Зміна частки автомобілів з ДВЗ та електромобілів з часом")
-    plt.legend()
-    plt.grid()
-    plt.show()
+    # plt.plot(years_range, dvz_share_percent, label="Частка ДВЗ (%)", color='r')
+    # plt.plot(years_range, ev_share_percent, label="Частка електромобілів (%)", color='g')
+    # plt.xlabel("Роки")
+    # plt.ylabel("Частка (%)")
+    # plt.title("Зміна частки автомобілів з ДВЗ та електромобілів з часом")
+    # plt.legend()
+    # plt.grid()
+    # plt.show()
 
     print(result)
     return result
