@@ -29,6 +29,9 @@ function visualizeCars(data) {
         yearTitle.textContent = `Рік ${year} - відношення машин з дзв до електромобілів: ${dvzPercent} : ${electricPercent}`;
         yearContainer.appendChild(yearTitle);
 
+        const diagramsElement = document.createElement('div');
+        diagramsElement.classList.add('diagrams-elem');
+
         const carsContainer = document.createElement('div');
         carsContainer.classList.add('cars');
 
@@ -46,9 +49,9 @@ function visualizeCars(data) {
             carsContainer.appendChild(car);
         }
 
-        carsContainer.appendChild(yearContainer)
-        // yearContainer.appendChild(carsContainer);
-        // container.appendChild(yearContainer);
-        container.appendChild(carsContainer);
+
+        diagramsElement.appendChild(carsContainer);
+        diagramsElement.appendChild(yearContainer);
+        container.appendChild(diagramsElement);
     });
 }

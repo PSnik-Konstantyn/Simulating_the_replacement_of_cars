@@ -17,9 +17,9 @@ class Form(forms.Form):
         label="Years",
         widget=forms.NumberInput(attrs={
             'type': 'range',
-            'min': '0',
+            'min': '1',
             'max': '50',
             'step': '1',
             'class': 'form-range'  # Optional for styling
-        }), initial=0
+        }), initial=1
     )

@@ -1,13 +1,17 @@
-*{
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
+
 
 .main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #e8e8e8;
+    min-height: 100%;
+
 }
 
 .main_text{
@@ -16,9 +20,6 @@
     text-align: center;
 }
 
-body{
-    margin: 100px;
-}
 
 a{
     font-size: 20px;
@@ -34,14 +35,21 @@ a{
 .user_UI{
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-left: 20px;
     width: 25%;
     height: 100%;
+    padding-top: 20px;
     border: 1px solid;
+    border-radius: 10px;
+    background: #e3e3e3;
 }
 
 .myForm {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .diagrams_UI{
@@ -53,6 +61,8 @@ a{
     text-align: center;
     padding-top: 20px;
     border: 1px solid;
+    border-radius: 10px;
+    background: #e3e3e3;
 }
 
 .form-group {
@@ -61,7 +71,6 @@ a{
     flex-wrap: wrap;
     justify-content: center;
     width: 80%;
-    margin-left: 25px;
     margin-top: 15px;
 }
 
@@ -82,19 +91,18 @@ a{
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
+    margin-bottom: 20px;
 }
 
 .form-button {
     margin-top: 10px;
-    height: 40px; /* Висота поля вводу */
-    width: 80%; /* Ширина поля вводу */
-
     padding: 10px; /* Внутрішні відступи */
     border: 1px solid #000000; /* Колір і товщина рамки */
     border-radius: 5px; /* Закруглення кутів */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тінь для об'єму */
     font-size: 16px; /* Розмір шрифту */
     transition: border-color 0.3s, box-shadow 0.3s; /* Анімація при фокусі */
+    background: #cee3ff94;
 }
 
 .input_for_user:focus {
