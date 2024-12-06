@@ -1,7 +1,8 @@
 .diagram-container {
     width: 90%;
     height: 1000px;
-    overflow: scroll;
+    overflow-y: scroll;  /* Прокручування тільки по вертикалі */
+    overflow-x: hidden;  /* Вимикає горизонтальне прокручування */
 }
 
 .year {

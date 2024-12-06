@@ -4,6 +4,12 @@ html, body {
     padding: 0;
 }
 
+header {
+    background-color: #5a7bba;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
 
 .main-content {
     display: flex;
@@ -14,25 +20,19 @@ html, body {
 
 }
 
-.main_text{
-    margin: 20px;
-    font-size: 20px;
-    text-align: center;
-}
-
-
-a{
+a {
     font-size: 20px;
 }
 
-.UI{
+.UI {
     display: flex;
     justify-content: space-between;
-
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 90%;
 }
 
-.user_UI{
+.user_UI {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,7 +52,7 @@ a{
     align-items: center;
 }
 
-.diagrams_UI{
+.diagrams_UI {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,11 +70,11 @@ a{
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80%;
+    width: 90%;
     margin-top: 15px;
 }
 
-.input_for_user{
+.input_for_user {
     height: 40px; /* Висота поля вводу */
     width: 100%; /* Ширина поля вводу */
     padding: 10px; /* Внутрішні відступи */
@@ -83,6 +83,57 @@ a{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тінь для об'єму */
     font-size: 16px; /* Розмір шрифту */
     transition: border-color 0.3s, box-shadow 0.3s; /* Анімація при фокусі */
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.trend {
+    margin-left: 10px;
+}
+
+.trend-input-fields {
+    display: flex;
+    align-items: center;
+}
+
+.trend-input {
+    width: 50px !important;
+    height: 37.6px !important;
+    padding: 0 3px !important;
+    margin-right: 5px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.trend-option {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
+    background-color: #f9f9f9;
+}
+
+/* Підсвітка при виборі */
+input[type="radio"]:checked + label {
+    border-color: #007bff;
+    background-color: #9aff96;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 3px rgba(130, 255, 127, 0.75);
+}
+
+/* Hover-ефект */
+.trend-option:hover {
+    border-color: #007bff;
+    background-color: #eef7ff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .button-container {
@@ -111,11 +162,11 @@ a{
     outline: none; /* Прибираємо стандартний контур */
 }
 
-.user_button{
+.user_button {
     margin-top: 20px;
 }
 
-.Input_for_years{
+.Input_for_years {
     text-align: center;
     width: 100%;
 }
@@ -125,12 +176,12 @@ a{
     margin: 20px 0;
 }
 
-.text_in_UI{
+.text_in_UI {
     font-size: 18px;
 
 }
 
-.label_for_input_field{
+.label_for_input_field {
     margin-top: 10px;
     margin-bottom: 5px;
     font-size: 14px;

@@ -2,13 +2,10 @@ function visualizeCars(data) {
     const container = document.getElementById('visualization');
     container.innerHTML = ''; // Очищаємо попередній вміст
 
-    console.log('Received data:', data); // Лог для перевірки структури
-
     const resultData = data[0][1]; // Отримуємо вкладені дані з "result"
 
     // Ітеруємо кожен рік і його значення
     Object.entries(resultData).forEach(([year, values]) => {
-        console.log(`Year: ${year}, Values:`, values);
 
         // Перевіряємо, чи values — це масив
         if (!Array.isArray(values) || values.length !== 2) {

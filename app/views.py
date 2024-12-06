@@ -12,15 +12,45 @@ def calc(request):
         form = Form(request.POST)
         if form.is_valid():
             fuel_price = form.cleaned_data['fuel_price']
+            fuel_price_trend = form.cleaned_data['fuel_price_trend']
+            fuel_price_trend_way = request.POST.get('fuel_price_trend_way')
+
             electricity_price = form.cleaned_data['electricity_price']
+            electricity_price_trend = form.cleaned_data['electricity_price_trend']
+            electricity_price_trend_way = request.POST.get('electricity_price_trend_way')
+
             dvz_maintenance_factor = form.cleaned_data['dvz_maintenance_factor']
+            dvz_maintenance_factor_trend = form.cleaned_data['dvz_maintenance_factor_trend']
+            dvz_maintenance_factor_trend_way = request.POST.get('dvz_maintenance_factor_way')
+
             ev_maintenance_factor = form.cleaned_data['ev_maintenance_factor']
+            ev_maintenance_factor_trend = form.cleaned_data['ev_maintenance_factor_trend']
+            ev_maintenance_factor_trend_way = request.POST.get('ev_maintenance_factor_trend_way')
+
             dvz_range = form.cleaned_data['dvz_range']
+            dvz_range_trend = form.cleaned_data['dvz_range_trend']
+            dvz_range_trend_way = request.POST.get('dvz_range_trend_way')
+
             ev_range = form.cleaned_data['ev_range']
+            ev_range_trend = form.cleaned_data['ev_range_trend']
+            ev_range_trend_way = request.POST.get('ev_range_trend_way')
+
             charging_speed = form.cleaned_data['charging_speed']
+            charging_speed_trend = form.cleaned_data['charging_speed_trend']
+            charging_speed_trend_way = request.POST.get('charging_speed_trend_way')
+
             refueling_speed = form.cleaned_data['refueling_speed']
+            refueling_speed_trend = form.cleaned_data['refueling_speed_trend']
+            refueling_speed_trend_way = request.POST.get('refueling_speed_trend_way')
+
             ev_subsidy = form.cleaned_data['ev_subsidy']
+            ev_subsidy_trend = form.cleaned_data['ev_subsidy_trend']
+            ev_subsidy_trend_way = request.POST.get('ev_subsidy_trend_way')
+
             dvz_subsidy = form.cleaned_data['dvz_subsidy']
+            dvz_subsidy_trend = form.cleaned_data['dvz_subsidy_trend']
+            dvz_subsidy_trend_way = request.POST.get('dvz_subsidy_trend_way')
+
             years = form.cleaned_data['years']
 
             transition_matrix = calculate_transition_matrix(fuel_price, electricity_price, dvz_maintenance_factor,
@@ -41,3 +71,7 @@ def calc(request):
 
 def description(request):
     return render(request, 'app/description.html')
+
+
+def trends(request):
+    return render(request, 'app/trends.html')
