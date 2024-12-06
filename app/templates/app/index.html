@@ -17,10 +17,10 @@
     <title>Система імітаційного моделювання заміни автомобілів з ДВЗ на електромобілі</title>
 </head>
 <body>
+<header>
+    <h2>Система імітаційного моделювання заміни автомобілів з ДВЗ на електромобілі</h2>
+</header>
 <div class="main-content">
-    <div class="main_text">
-        <p>Система імітаційного моделювання заміни автомобілів з ДВЗ на електромобілі</p>
-    </div>
     <div class="menu">
         <input type="checkbox" id="nav-toggle" hidden>
 
@@ -29,11 +29,11 @@
             <label for="nav-toggle" class="nav-toggle" onclick></label>
 
             <ul>
-                <li><a href="#1">Головна</a>
-                <li><a href="#2">Опис математичної моделі</a>
-                <li><a href="#3">Skills</a>
-                <li><a href="#4">Portfolio</a>
-                <li><a href="#5">Contacts</a>
+                <li><a href="/">Головна</a>
+                <li><a href="/description">Опис математичної моделі</a>
+                <li><a href="/trends">Тренди</a>
+                <li><a href="/about_dvz">Про ДВЗ</a>
+                <li><a href="/about_ev">Про електродвигуни</a>
             </ul>
         </nav>
     </div>
@@ -43,56 +43,223 @@
         <div class="user_UI">
             <p class="text_in_UI">Ведіть значення для обрахунку:</p>
             <form id="myForm" class="myForm" method="post">
-                {% csrf_token %}
+
 
                 <div class="form-group">
-                    <label class="label_for_input_field">fuel_price</label>
-                    {{ form.fuel_price }}
+                    <div class="input-container">
+                        <div>
+                            <label class="label_for_input_field">fuel_price</label>
+                            {{ form.fuel_price }}
+                        </div>
+                        <div class="trend">
+                            <label class="label_for_input_field">trend</label>
+                            <div class="trend-input-fields">
+                                {{ form.fuel_price_trend }}
+                                <input type="radio" id="fuel_price_trend_up" name="fuel_price_trend_way" value="up">
+                                <label id="fuel_price_trend_up_lab" for="fuel_price_trend_up"
+                                       class="trend-option">📈</label>
+
+                                <input type="radio" id="fuel_price_trend_down" name="fuel_price_trend_way" value="down">
+                                <label for="fuel_price_trend_down" class="trend-option">📉</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="label_for_input_field">electricity_price</label>
-                    {{ form.electricity_price }}
+                    <div class="input-container">
+                        <div>
+                            <label class="label_for_input_field">electricity_price</label>
+                            {{ form.electricity_price }}
+                        </div>
+                        <div class="trend">
+                            <label class="label_for_input_field">trend</label>
+                            <div class="trend-input-fields">
+                                {{ form.electricity_price_trend }}
+                                <input type="radio" id="electricity_price_trend_up" name="electricity_price_trend_way"
+                                       value="up">
+                                <label for="electricity_price_trend_up" class="trend-option">📈</label>
+
+                                <input type="radio" id="electricity_price_trend_down" name="electricity_price_trend_way"
+                                       value="down">
+                                <label for="electricity_price_trend_down" class="trend-option">📉</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="label_for_input_field">dvz_maintenance_factor</label>
-                    {{ form.dvz_maintenance_factor }}
+                    <div class="input-container">
+                        <div>
+                            <label class="label_for_input_field">dvz_maintenance_factor</label>
+                            {{ form.dvz_maintenance_factor }}
+                        </div>
+                        <div class="trend">
+                            <label class="label_for_input_field">trend</label>
+                            <div class="trend-input-fields">
+                                {{ form.dvz_maintenance_factor_trend }}
+                                <input type="radio" id="dvz_maintenance_factor_trend_up"
+                                       name="dvz_maintenance_factor_trend_way" value="up">
+                                <label for="dvz_maintenance_factor_trend_up" class="trend-option">📈</label>
+
+                                <input type="radio" id="dvz_maintenance_factor_trend_down"
+                                       name="dvz_maintenance_factor_trend_way"
+                                       value="down">
+                                <label for="dvz_maintenance_factor_trend_down" class="trend-option">📉</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="label_for_input_field">ev_maintenance_factor</label>
-                    {{ form.ev_maintenance_factor }}
+                    <div class="input-container">
+                        <div>
+                            <label class="label_for_input_field">ev_maintenance_factor</label>
+                            {{ form.ev_maintenance_factor }}
+                        </div>
+                        <div class="trend">
+                            <label class="label_for_input_field">trend</label>
+                            <div class="trend-input-fields">
+                                {{ form.ev_maintenance_factor_trend }}
+                                <input type="radio" id="ev_maintenance_factor_trend_up"
+                                       name="ev_maintenance_factor_trend_way" value="up">
+                                <label for="ev_maintenance_factor_trend_up" class="trend-option">📈</label>
+
+                                <input type="radio" id="ev_maintenance_factor_trend_down"
+                                       name="ev_maintenance_factor_trend_way"
+                                       value="down">
+                                <label for="ev_maintenance_factor_trend_down" class="trend-option">📉</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="label_for_input_field">dvz_range</label>
-                    {{ form.dvz_range }}
+                    <div class="input-container">
+                        <div>
+                            <label class="label_for_input_field">dvz_range</label>
+                            {{ form.dvz_range }}
+                        </div>
+                        <div class="trend">
+                            <label class="label_for_input_field">trend</label>
+                            <div class="trend-input-fields">
+                                {{ form.dvz_range_trend }}
+                                <input type="radio" id="dvz_range_trend_up" name="dvz_range_trend_way" value="up">
+                                <label for="dvz_range_trend_up" class="trend-option">📈</label>
+
+                                <input type="radio" id="dvz_range_trend_down" name="dvz_range_trend_way"
+                                       value="down">
+                                <label for="dvz_range_trend_down" class="trend-option">📉</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="label_for_input_field">ev_range</label>
-                    {{ form.ev_range }}
+                    <div class="input-container">
+                        <div>
+                            <label class="label_for_input_field">ev_range</label>
+                            {{ form.ev_range }}
+                        </div>
+                        <div class="trend">
+                            <label class="label_for_input_field">trend</label>
+                            <div class="trend-input-fields">
+                                {{ form.ev_range_trend }}
+                                <input type="radio" id="ev_range_trend_up" name="ev_range_trend_way" value="up">
+                                <label for="ev_range_trend_up" class="trend-option">📈</label>
+
+                                <input type="radio" id="ev_range_trend_down" name="ev_range_trend_way"
+                                       value="down">
+                                <label for="ev_range_trend_down" class="trend-option">📉</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="label_for_input_field">charging_speed</label>
-                    {{ form.charging_speed }}
+                    <div class="input-container">
+                        <div>
+                            <label class="label_for_input_field">charging_speed</label>
+                            {{ form.charging_speed }}
+                        </div>
+                        <div class="trend">
+                            <label class="label_for_input_field">trend</label>
+                            <div class="trend-input-fields">
+                                {{ form.charging_speed_trend }}
+                                <input type="radio" id="charging_speed_trend_up" name="charging_speed_trend_way"
+                                       value="up">
+                                <label for="charging_speed_trend_up" class="trend-option">📈</label>
+
+                                <input type="radio" id="charging_speed_trend_down" name="charging_speed_trend_way"
+                                       value="down">
+                                <label for="charging_speed_trend_down" class="trend-option">📉</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="label_for_input_field">refueling_speed</label>
-                    {{ form.refueling_speed }}
+                    <div class="input-container">
+                        <div>
+                            <label class="label_for_input_field">refueling_speed</label>
+                            {{ form.refueling_speed }}
+                        </div>
+                        <div class="trend">
+                            <label class="label_for_input_field">trend</label>
+                            <div class="trend-input-fields">
+                                {{ form.refueling_speed_trend }}
+                                <input type="radio" id="refueling_speed_trend_up" name="refueling_speed_trend_way"
+                                       value="up">
+                                <label for="refueling_speed_trend_up" class="trend-option">📈</label>
+
+                                <input type="radio" id="refueling_speed_trend_down" name="refueling_speed_trend_way"
+                                       value="down">
+                                <label for="refueling_speed_trend_down" class="trend-option">📉</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="label_for_input_field">ev_subsidy</label>
-                    {{ form.ev_subsidy }}
+                    <div class="input-container">
+                        <div>
+                            <label class="label_for_input_field">ev_subsidy</label>
+                            {{ form.ev_subsidy }}
+                        </div>
+                        <div class="trend">
+                            <label class="label_for_input_field">trend</label>
+                            <div class="trend-input-fields">
+                                {{ form.ev_subsidy_trend }}
+                                <input type="radio" id="ev_subsidy_trend_up" name="ev_subsidy_trend_way" value="up">
+                                <label for="ev_subsidy_trend_up" class="trend-option">📈</label>
+
+                                <input type="radio" id="ev_subsidy_trend_down" name="ev_subsidy_trend_way"
+                                       value="down">
+                                <label for="ev_subsidy_trend_down" class="trend-option">📉</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="label_for_input_field">dvz_subsidy</label>
-                    {{ form.dvz_subsidy }}
+                    <div class="input-container">
+                        <div>
+                            <label class="label_for_input_field">dvz_subsidy</label>
+                            {{ form.dvz_subsidy }}
+                        </div>
+                        <div class="trend">
+                            <label class="label_for_input_field">trend</label>
+                            <div class="trend-input-fields">
+                                {{ form.dvz_subsidy_trend }}
+                                <input type="radio" id="dvz_subsidy_trend_up" name="dvz_subsidy_trend_way" value="up">
+                                <label for="dvz_subsidy_trend_up" class="trend-option">📈</label>
+
+                                <input type="radio" id="dvz_subsidy_trend_down" name="dvz_subsidy_trend_way"
+                                       value="down">
+                                <label for="dvz_subsidy_trend_down" class="trend-option">📉</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -100,7 +267,7 @@
                         <label class="label_for_input_field">years</label>
                         {{ form.years }}
                     </div>
-                    <div class="output">Поточне значення: <span id="value">0</span></div>
+                    <div class="output">Поточне значення: <span id="value">1</span></div>
                 </div>
 
                 <div class="button-container">
@@ -133,6 +300,126 @@
 </div>
 <script>
     document.getElementById('myForm').addEventListener('submit', function (event) {
+        const fuelPriceTrendUp = document.getElementById('fuel_price_trend_up');
+        const fuelPriceTrendDown = document.getElementById('fuel_price_trend_down');
+        const fuelPriceTrend = document.getElementById('id_fuel_price_trend');
+
+        const electricityPriceTrendUp = document.getElementById('electricity_price_trend_up');
+        const electricityPriceTrendDown = document.getElementById('electricity_price_trend_down');
+        const electricityPriceTrend = document.getElementById('id_electricity_price_trend');
+
+        const dvzMaintenanceFactorTrendUp = document.getElementById('dvz_maintenance_factor_trend_up');
+        const dvzMaintenanceFactorTrendDown = document.getElementById('dvz_maintenance_factor_trend_down');
+        const dvzMaintenanceFactorTrend = document.getElementById('id_dvz_maintenance_factor_trend');
+
+        const evMaintenanceFactorTrendUp = document.getElementById('ev_maintenance_factor_trend_up');
+        const evMaintenanceFactorTrendDown = document.getElementById('ev_maintenance_factor_trend_down');
+        const evMaintenanceFactorTrend = document.getElementById('id_ev_maintenance_factor_trend');
+
+        const dvzRangeTrendUp = document.getElementById('dvz_range_trend_up');
+        const dvzRangeTrendDown = document.getElementById('dvz_range_trend_down');
+        const dvzRangeTrend = document.getElementById('id_dvz_range_trend');
+
+        const evRangeTrendUp = document.getElementById('ev_range_trend_up');
+        const evRangeTrendDown = document.getElementById('ev_range_trend_down');
+        const evRangeTrend = document.getElementById('id_ev_range_trend');
+
+        const chargingSpeedTrendUp = document.getElementById('charging_speed_trend_up');
+        const chargingSpeedTrendDown = document.getElementById('charging_speed_trend_down');
+        const chargingSpeedTrend = document.getElementById('id_charging_speed_trend');
+
+        const refuelingSpeedTrendUp = document.getElementById('refueling_speed_trend_up');
+        const refuelingSpeedTrendDown = document.getElementById('refueling_speed_trend_down');
+        const refuelingSpeedTrend = document.getElementById('id_refueling_speed_trend');
+
+        const evSubsidyTrendUp = document.getElementById('ev_subsidy_trend_up');
+        const evSubsidyTrendDown = document.getElementById('ev_subsidy_trend_down');
+        const evSubsidyTrend = document.getElementById('id_ev_subsidy_trend');
+
+        const dvzSubsidyTrendUp = document.getElementById('dvz_subsidy_trend_up');
+        const dvzSubsidyTrendDown = document.getElementById('dvz_subsidy_trend_down');
+        const dvzSubsidyTrend = document.getElementById('id_dvz_subsidy_trend');
+        
+        if (fuelPriceTrend.value) {
+            if (!fuelPriceTrendUp.checked && !fuelPriceTrendDown.checked) {
+                alert('Please select a fuel price trend.');
+                event.preventDefault();
+                return
+            }
+        }
+
+        if (electricityPriceTrend.value) {
+            if (!electricityPriceTrendUp.checked && !electricityPriceTrendDown.checked) {
+                alert('Please select an electricity price trend.');
+                event.preventDefault();
+                return;
+            }
+        }
+
+        if (dvzMaintenanceFactorTrend.value) {
+            if (!dvzMaintenanceFactorTrendUp.checked && !dvzMaintenanceFactorTrendDown.checked) {
+                alert('Please select a DVZ maintenance factor trend.');
+                event.preventDefault();
+                return;
+            }
+        }
+
+        if (evMaintenanceFactorTrend.value) {
+            if (!evMaintenanceFactorTrendUp.checked && !evMaintenanceFactorTrendDown.checked) {
+                alert('Please select an EV maintenance factor trend.');
+                event.preventDefault();
+                return;
+            }
+        }
+
+        if (dvzRangeTrend.value) {
+            if (!dvzRangeTrendUp.checked && !dvzRangeTrendDown.checked) {
+                alert('Please select a DVZ range trend.');
+                event.preventDefault();
+                return;
+            }
+        }
+
+        if (evRangeTrend.value) {
+            if (!evRangeTrendUp.checked && !evRangeTrendDown.checked) {
+                alert('Please select an EV range trend.');
+                event.preventDefault();
+                return;
+            }
+        }
+
+        if (chargingSpeedTrend.value) {
+            if (!chargingSpeedTrendUp.checked && !chargingSpeedTrendDown.checked) {
+                alert('Please select a charging speed trend.');
+                event.preventDefault();
+                return;
+            }
+        }
+
+        if (refuelingSpeedTrend.value) {
+            if (!refuelingSpeedTrendUp.checked && !refuelingSpeedTrendDown.checked) {
+                alert('Please select a refueling speed trend.');
+                event.preventDefault();
+                return;
+            }
+        }
+
+        if (evSubsidyTrend.value) {
+            if (!evSubsidyTrendUp.checked && !evSubsidyTrendDown.checked) {
+                alert('Please select an EV subsidy trend.');
+                event.preventDefault();
+                return;
+            }
+        }
+
+        if (dvzSubsidyTrend.value) {
+            if (!dvzSubsidyTrendUp.checked && !dvzSubsidyTrendDown.checked) {
+                alert('Please select a DVZ subsidy trend.');
+                event.preventDefault();
+                return;
+            }
+        }
+        
         event.preventDefault(); // Передбачаємо стандартну дію відправки форми
 
         // Отримуємо значення з полів форми
@@ -150,8 +437,6 @@
                 return response.json(); // Перетворюємо відповідь у JSON
             })
             .then(data => {
-                console.log(data); // Перевіряємо, що ми отримали
-
                 // Викликаємо функцію для візуалізації машинок
                 visualizeCars(Object.entries(data));
             })

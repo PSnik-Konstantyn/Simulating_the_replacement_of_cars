@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app/css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/aboutDvz.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Про ДВЗ</title>
+</head>
+<body>
+<header>
+    <h1 class="header-text">Про двигуни внутрішнього згоряння (ДВЗ)</h1>
+</header>
+<div class="main-content">
+    <div class="menu">
+        <input type="checkbox" id="nav-toggle" hidden>
+
+        <nav class="nav">
+
+            <label for="nav-toggle" class="nav-toggle" onclick></label>
+
+            <ul>
+                <li><a href="/">Головна</a>
+                <li><a href="/description">Опис математичної моделі</a>
+                <li><a href="/trends">Тренди</a>
+                <li><a href="/about_dvz">Про ДВЗ</a>
+                <li><a href="/about_ev">Про електродвигуни</a>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <h2>Що таке ДВЗ?</h2>
+        <p>Двигун внутрішнього згоряння (ДВЗ) – це пристрій, що перетворює хімічну енергію палива в механічну енергію
+            через процес згоряння.</p>
+
+        <h2>Переваги</h2>
+        <ul>
+            <li>Широка доступність інфраструктури для заправки.</li>
+            <li>Надійність технології завдяки довгій історії розвитку.</li>
+            <li>Висока потужність для важких транспортних засобів.</li>
+        </ul>
+
+        <h2>Недоліки</h2>
+        <ul>
+            <li>Шкідливі викиди, що впливають на екологію.</li>
+            <li>Залежність від викопного палива.</li>
+            <li>Складність у технічному обслуговуванні.</li>
+        </ul>
+
+        <h2>Екологічний вплив</h2>
+        <p>ДВЗ є одним із основних джерел викидів парникових газів, що сприяють глобальному потеплінню.</p>
+
+        <h2>Історія</h2>
+        <p>ДВЗ був розроблений наприкінці 19-го століття, включаючи такі знакові винаходи, як двигун Отто та дизельний
+            двигун.</p>
+
+        <h2>Майбутнє</h2>
+        <p>Перспективи включають гібридні технології, використання синтетичного палива та поступовий перехід на
+            електромобілі.</p>
+    </div>
+</div>
+</body>
+</html>

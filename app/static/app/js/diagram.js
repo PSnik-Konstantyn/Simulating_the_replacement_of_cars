@@ -2,13 +2,10 @@ function visualizeCars(data) {
     const container = document.getElementById('visualization');
     container.innerHTML = ''; // Очищаємо попередній вміст
 
-    console.log('Received data:', data); // Лог для перевірки структури
-
     const resultData = data[0][1]; // Отримуємо вкладені дані з "result"
 
     // Ітеруємо кожен рік і його значення
     Object.entries(resultData).forEach(([year, values]) => {
-        console.log(`Year: ${year}, Values:`, values);
 
         // Перевіряємо, чи values — це масив
         if (!Array.isArray(values) || values.length !== 2) {
@@ -29,6 +26,9 @@ function visualizeCars(data) {
         yearTitle.textContent = `Рік ${year} - відношення машин з дзв до електромобілів: ${dvzPercent} : ${electricPercent}`;
         yearContainer.appendChild(yearTitle);
 
+        const diagramsElement = document.createElement('div');
+        diagramsElement.classList.add('diagrams-elem');
+
         const carsContainer = document.createElement('div');
         carsContainer.classList.add('cars');
 
@@ -46,9 +46,9 @@ function visualizeCars(data) {
             carsContainer.appendChild(car);
         }
 
-        carsContainer.appendChild(yearContainer)
-        // yearContainer.appendChild(carsContainer);
-        // container.appendChild(yearContainer);
-        container.appendChild(carsContainer);
+
+        diagramsElement.appendChild(carsContainer);
+        diagramsElement.appendChild(yearContainer);
+        container.appendChild(diagramsElement);
     });
 }
