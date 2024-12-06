@@ -75,3 +75,11 @@ def description(request):
 
 def trends(request):
     return render(request, 'app/trends.html')
+
+
+def about_dvz(request):
+    return render(request, 'app/aboutDVZ.html')
+
+
+def about_ev(request):
+    return render(request, 'app/aboutEV.html')

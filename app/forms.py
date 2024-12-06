@@ -5,7 +5,6 @@ from django.forms import NumberInput, TextInput
 class Form(forms.Form):
     fuel_price = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control', 'style': 'font-size: 16px; text-align: center;'}),
-        initial=1,
     )
     fuel_price_trend = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control trend-input', 'style': 'font-size: 16px;'}),
@@ -15,7 +14,6 @@ class Form(forms.Form):
 
     electricity_price = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control', 'style': 'font-size: 16px; text-align: center;'}),
-        initial=1,
     )
     electricity_price_trend = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control trend-input', 'style': 'font-size: 16px;'}),
@@ -25,7 +23,6 @@ class Form(forms.Form):
 
     dvz_maintenance_factor = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control', 'style': 'font-size: 16px; text-align: center;'}),
-        initial=1,
     )
     dvz_maintenance_factor_trend = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control trend-input', 'style': 'font-size: 16px;'}),
@@ -35,7 +32,6 @@ class Form(forms.Form):
 
     ev_maintenance_factor = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control', 'style': 'font-size: 16px; text-align: center;'}),
-        initial=1,
     )
     ev_maintenance_factor_trend = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control trend-input', 'style': 'font-size: 16px;'}),
@@ -45,7 +41,6 @@ class Form(forms.Form):
 
     dvz_range = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control', 'style': 'font-size: 16px; text-align: center;'}),
-        initial=1,
     )
     dvz_range_trend = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control trend-input', 'style': 'font-size: 16px;'}),
@@ -55,7 +50,6 @@ class Form(forms.Form):
 
     ev_range = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control', 'style': 'font-size: 16px; text-align: center;'}),
-        initial=1,
     )
     ev_range_trend = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control trend-input', 'style': 'font-size: 16px;'}),
@@ -65,7 +59,6 @@ class Form(forms.Form):
 
     charging_speed = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control', 'style': 'font-size: 16px; text-align: center;'}),
-        initial=1,
     )
     charging_speed_trend = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control trend-input', 'style': 'font-size: 16px;'}),
@@ -75,7 +68,6 @@ class Form(forms.Form):
 
     refueling_speed = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control', 'style': 'font-size: 16px; text-align: center;'}),
-        initial=1,
     )
     refueling_speed_trend = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control trend-input', 'style': 'font-size: 16px;'}),
@@ -85,7 +77,6 @@ class Form(forms.Form):
 
     ev_subsidy = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control', 'style': 'font-size: 16px; text-align: center;'}),
-        initial=1,
     )
     ev_subsidy_trend = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control trend-input', 'style': 'font-size: 16px;'}),
@@ -95,7 +86,6 @@ class Form(forms.Form):
 
     dvz_subsidy = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control', 'style': 'font-size: 16px; text-align: center;'}),
-        initial=1,
     )
     dvz_subsidy_trend = forms.FloatField(
         widget=NumberInput(attrs={'class': 'form-control trend-input', 'style': 'font-size: 16px;'}),
