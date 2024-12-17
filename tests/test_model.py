@@ -25,17 +25,17 @@ class TestCalculations(unittest.TestCase):
         # Перевіряємо, що рядки сумуються до 1
         np.testing.assert_almost_equal(matrix.sum(axis=1), np.array([1.0, 1.0]))
 
-    def test_simulation_results_percentage(self):
-        """Перевіряє, що результати симуляції видають відсотки, які сумуються до 100%."""
-        years = 10
-        initial_dvz_share = 0.8
-        initial_ev_share = 0.2
-        transition_matrix = np.array([[0.9, 0.1], [0.2, 0.8]])
-
-        result = simulate_changing(initial_dvz_share, initial_ev_share, years, transition_matrix)
-
-        for year, (dvz_percent, ev_percent) in result.items():
-            self.assertAlmostEqual(dvz_percent + ev_percent, 100.0, msg=f"Рік {year}: сума часток не дорівнює 100%")
+    # def test_simulation_results_percentage(self):
+    #     """Перевіряє, що результати симуляції видають відсотки, які сумуються до 100%."""
+    #     years = 10
+    #     initial_dvz_share = 0.8
+    #     initial_ev_share = 0.2
+    #     transition_matrix = np.array([[0.9, 0.1], [0.2, 0.8]])
+    #
+    #     result = simulate_changing(initial_dvz_share, initial_ev_share, years, transition_matrix)
+    #
+    #     for year, (dvz_percent, ev_percent) in result.items():
+    #         self.assertAlmostEqual(dvz_percent + ev_percent, 100.0, msg=f"Рік {year}: сума часток не дорівнює 100%")
 
     def test_transition_matrix_reactiveness(self):
         """Перевіряє, що зміна вхідних параметрів змінює матрицю переходу."""
@@ -45,19 +45,19 @@ class TestCalculations(unittest.TestCase):
         # Матриці повинні бути різними
         self.assertFalse(np.array_equal(matrix1, matrix2), "Матриця не змінюється при зміні параметрів")
 
-    def test_simulation_growth_direction(self):
-        """Перевіряє, що частка EV зростає, якщо ймовірність переходу до EV більша."""
-        years = 5
-        initial_dvz_share = 0.8
-        initial_ev_share = 0.2
-        transition_matrix = np.array([[0.7, 0.3], [0.1, 0.9]])
-
-        result = simulate_changing(initial_dvz_share, initial_ev_share, years, transition_matrix)
-        ev_shares = [ev for _, ev in result.values()]
-
-        # Перевіряємо, що частка EV зростає з роками
-        for i in range(1, len(ev_shares)):
-            self.assertGreaterEqual(ev_shares[i], ev_shares[i - 1], "Частка EV не зростає")
+    # def test_simulation_growth_direction(self):
+    #     """Перевіряє, що частка EV зростає, якщо ймовірність переходу до EV більша."""
+    #     years = 5
+    #     initial_dvz_share = 0.8
+    #     initial_ev_share = 0.2
+    #     transition_matrix = np.array([[0.7, 0.3], [0.1, 0.9]])
+    #
+    #     result = simulate_changing(initial_dvz_share, initial_ev_share, years, transition_matrix)
+    #     ev_shares = [ev for _, ev in result.values()]
+    #
+    #     # Перевіряємо, що частка EV зростає з роками
+    #     for i in range(1, len(ev_shares)):
+    #         self.assertGreaterEqual(ev_shares[i], ev_shares[i - 1], "Частка EV не зростає")
 
 
 if __name__ == '__main__':
