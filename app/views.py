@@ -32,6 +32,7 @@ def calc(request):
             ev_maintenance_factor = form.cleaned_data['ev_maintenance_factor']
             ev_maintenance_factor_trend = form.cleaned_data['ev_maintenance_factor_trend']
             ev_maintenance_factor_trend_way = request.POST.get('ev_maintenance_factor_trend_way')
+
             if ev_maintenance_factor_trend_way == 'down':
                 ev_maintenance_factor_trend = ev_maintenance_factor * -1
 
@@ -40,6 +41,7 @@ def calc(request):
             dvz_range_trend_way = request.POST.get('dvz_range_trend_way')
             if dvz_range_trend_way == 'down':
                 dvz_range_trend = dvz_range * -1
+
 
             ev_range = form.cleaned_data['ev_range']
             ev_range_trend = form.cleaned_data['ev_range_trend']
@@ -79,6 +81,7 @@ def calc(request):
                                        fuel_price_trend, electricity_price_trend, dvz_maintenance_factor_trend,
                                        ev_maintenance_factor_trend, dvz_range_trend, ev_range_trend,
                                        charging_speed_trend, refueling_speed_trend, dvz_subsidy_trend, ev_subsidy_trend)
+
 
             return JsonResponse({"result": result})
         else:
