@@ -1,8 +1,8 @@
 from app.model.Calculations import simulate_changing
 
 years = 9
-initial_dvz_share = 0.8
-initial_ev_share = 0.2
+initial_dvz_share = 0.82
+initial_ev_share = 0.18
 
 fuel_price = 1.9
 electricity_price = 0.75
